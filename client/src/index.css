@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Tiptap renders the document into a contenteditable div with class "tiptap".
+   Tailwind's preflight resets headings/lists, so the document content needs
+   its own styles here. */
+.tiptap {
+  outline: none;
+  min-height: 55vh;
+}
+
+.tiptap h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap p {
+  margin: 0.25rem 0;
+  line-height: 1.7;
+}
+
+.tiptap ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.tiptap ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #d1d5db;
+  padding-left: 1rem;
+  color: #6b7280;
+}
+
+.tiptap code {
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.tiptap pre {
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.tiptap pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Remote cursors (CollaborationCursor). The extension inserts these elements
+   for every OTHER connected client but ships no styles. The caret is a thin
+   vertical bar in the user's color; the label is their name floating above it.
+   border-color/background come from each user's color via inline style. */
+.collaboration-cursor__caret {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  word-break: normal;
+  pointer-events: none;
+}
+
+.collaboration-cursor__label {
+  position: absolute;
+  top: -1.4em;
+  left: -1px;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem 0.25rem 0.25rem 0;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
